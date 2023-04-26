@@ -1,0 +1,12 @@
+---
+# Build and run `helm` assuming it was installed manually
+# or via package manager
+# REQUIRES: helm to be installed and on the $PATH
+- id: helm-lint
+  name: helm lint
+  description: Runs Helm lint on the repo. Run `helm lint --help` for args.
+  language: system
+  entry: helm lint
+  pass_filenames: false
+  files: (\.yaml)$
+  exclude: \.charts\/.*$
